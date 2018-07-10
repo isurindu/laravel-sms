@@ -23,7 +23,7 @@ In Laravel 5.5 the service provider will automatically get registered. In older 
 ];
 ```
 
-You can publish config and views
+You can publish config
 
 ```bash
 php artisan vendor:publish --provider="Isurindu\LaravelSms\LaravelSmsServiceProvider::class"
