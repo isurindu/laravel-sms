@@ -1,0 +1,28 @@
+{
+    "name": "isurindu/laravel-sms",
+    "description": "Simple SMS Package for laravel",
+    "type": "project",
+    "license": "mit",
+    "authors": [{
+        "name": "isurindu prabashwara",
+        "email": "isurindu.prabashwara@gmail.com"
+    }],
+    "require": {
+        "shoutoutlabs/shoutout-sdk": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Isurindu\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Isurindu\\LaravelSms\\LaravelSmsServiceProvider"
+            ],
+            "aliases": {
+                "Sms": "Isurindu\\LaravelSms\\Facades\\Sms"
+            }
+        }
+    }
+}
