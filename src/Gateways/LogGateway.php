@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Log;
 use Isurindu\LaravelSms\Interfaces\SmsInterface;
 use Isurindu\LaravelSms\Exceptions\LaravelSmsGatewayException;
 
-class ShoutoutGateway implements SmsInterface
+class LogGateway implements SmsInterface
 {
     public function sendSms($to, $msg, $from)
     {
