@@ -1,7 +1,6 @@
 {
     "name": "isurindu/laravel-sms",
     "description": "Simple SMS Package for laravel",
-    "type": "project",
     "license": "mit",
     "authors": [{
         "name": "isurindu prabashwara",
