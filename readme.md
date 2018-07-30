@@ -33,8 +33,8 @@ configaration in `config/sms.php`
 
 ```php
 return [
-    'default_sms_provider'=>'shoutout',
-    'fallback_sms_provider'=>'', //alternative sms provider for an emergency fallback
+    'default_sms_provider'=>'shoutout',//shoutout,log
+    'fallback_sms_provider'=>'log', //alternative sms provider for an emergency fallback
 
     'shoutout'=>[
         'api_key'=>env('SHOUTOUT_API_KEY', 'XXXXXXXXX.XXXXXXXXX.XXXXXXXXX'),

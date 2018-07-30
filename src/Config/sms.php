@@ -2,7 +2,7 @@
 
 
 return [
-    'default_sms_provider'=>'shoutout',
+    'default_sms_provider'=>'shoutout', // shoutout,log
     'fallback_sms_provider'=>'', //alternative sms provider for an emergency
 
     'shoutout'=>[
