@@ -9,13 +9,6 @@ class LogGateway implements SmsInterface
 {
     public function sendSms($to, $msg, $from)
     {
-        $apiKey = config('sms.shoutout.api_key');
-
-
-        if ($from == null) {
-            $from = config('sms.shoutout.from');
-        }
-
         $log = array(
             'from' => $from,
             'msg' => $msg,
