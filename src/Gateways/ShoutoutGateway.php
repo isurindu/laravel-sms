@@ -11,7 +11,7 @@ class ShoutoutGateway implements SmsInterface
     {
         $apiKey = config('sms.shoutout.api_key');
 
-        $client = new ShoutoutClient($apiKey, true, false);
+        $client = new ShoutoutClient($apiKey, false, false);
 
         if ($from == null) {
             $from = config('sms.shoutout.from');
