@@ -9,9 +9,14 @@ class LaravelSmsServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        $this->loadTranslationsFrom(__DIR__.'/Lang', 'sms');
+
+        
         $this->publishes([
             __DIR__.'/Config/sms.php' => config_path('sms.php'),
         ]);
+
+        
         $this->app->singleton('sms', function ($app) {
             return new GatewayManager;
         });

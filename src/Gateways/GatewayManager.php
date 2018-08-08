@@ -28,6 +28,7 @@ class GatewayManager
      */
     public function provider($provider)
     {
+        $this->from  = config('sms.'.$provider.'.from');
         $class_name =studly_case($provider.'Gateway');
         $file = dirname(__FILE__).'/'.$class_name.".php";
         if (!file_exists($file)) {
@@ -57,6 +58,7 @@ class GatewayManager
         try {
             $this
             ->provider
+
             ->sendSms($this->to, $msg, $this->from);
         } catch (LaravelSmsGatewayException $e) {
             if (!$this->_isEnableFallback()) {
