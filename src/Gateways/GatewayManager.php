@@ -67,6 +67,7 @@ class GatewayManager
                     'to'=>$this->to,
                     'msg'=>$msg,
                     'from'=>$this->from,
+                    'provider'=>$this->provider,
                 ]);
                 throw new LaravelSmsException($e->getMessage(), 1);
             }
