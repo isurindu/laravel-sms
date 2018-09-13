@@ -1,6 +1,7 @@
 <?php
 namespace Isurindu\LaravelSms\Gateways;
 
+use Illuminate\Support\Facades\Log;
 use Isurindu\LaravelSms\Interfaces\SmsInterface;
 use Isurindu\LaravelSms\Exceptions\LaravelSmsException;
 use Isurindu\LaravelSms\Exceptions\LaravelSmsGatewayException;
@@ -62,6 +63,11 @@ class GatewayManager
             ->sendSms($this->to, $msg, $this->from);
         } catch (LaravelSmsGatewayException $e) {
             if (!$this->_isEnableFallback()) {
+                Log::critical("sms sending error : ".$e->getMessage(), [
+                    'to'=>$this->to,
+                    'msg'=>$msg,
+                    'from'=>$this->from,
+                ]);
                 throw new LaravelSmsException($e->getMessage(), 1);
             }
             $this
