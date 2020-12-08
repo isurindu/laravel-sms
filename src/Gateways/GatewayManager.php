@@ -30,6 +30,9 @@ class GatewayManager
      */
     public function provider($provider)
     {
+        if ($provider == null) {
+            return false;
+        }
         $this->from  = config('sms.'.$provider.'.from');
 
         $class_name = ucfirst($provider).'Gateway';
