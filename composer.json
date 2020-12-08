@@ -8,7 +8,9 @@
     }],
     "require": {
         "shoutoutlabs/shoutout-sdk": "^3.0",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.5.5|^7.0.1"
+    },
+    "require-dev": {
     },
     "autoload": {
         "psr-4": {

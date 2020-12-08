@@ -62,6 +62,17 @@ class GatewayManager
 
             ->sendSms($this->to, $msg, $this->from);
         } catch (LaravelSmsGatewayException $e) {
+            $current_provider = $this->provider;
+            $fallbak_provider = $this->provider(config('sms.fallback_sms_provider'));
+            if ($current_provider == $fallbak_provider) {
+                Log::critical("sms sending error every attempt faild : " . $e->getMessage(), [
+                    'to' => $this->to,
+                    'msg' => $msg,
+                    'from' => $this->from,
+                    'provider' => $this->provider,
+                ]);
+                return false;
+            }
             if (!$this->_isEnableFallback()) {
                 Log::critical("sms sending error : ".$e->getMessage(), [
                     'to'=>$this->to,
