@@ -1,6 +1,7 @@
 <?php
 namespace Isurindu\LaravelSms\Gateways;
 
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Log;
 use Isurindu\LaravelSms\Interfaces\SmsInterface;
 use Isurindu\LaravelSms\Exceptions\LaravelSmsException;
@@ -30,7 +31,9 @@ class GatewayManager
     public function provider($provider)
     {
         $this->from  = config('sms.'.$provider.'.from');
-        $class_name =studly_case($provider.'Gateway');
+
+        $class_name = Str::of($provider.'Gateway')->studly();
+
         $file = dirname(__FILE__).'/'.$class_name.".php";
         if (!file_exists($file)) {
             throw new LaravelSmsException("We could not found Gateway Provider  : {$file}");

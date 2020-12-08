@@ -8,7 +8,8 @@
     }],
     "require": {
         "shoutoutlabs/shoutout-sdk": "^3.0",
-        "guzzlehttp/guzzle": "^6.5.5|^7.0.1"
+        "guzzlehttp/guzzle": "^6.5.5|^7.0.1",
+        "laravel/framework": "^8.0"
     },
     "require-dev": {
     },
