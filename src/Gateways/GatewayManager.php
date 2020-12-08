@@ -32,7 +32,7 @@ class GatewayManager
     {
         $this->from  = config('sms.'.$provider.'.from');
 
-        $class_name = Str::of($provider.'Gateway')->studly();
+        $class_name = ucfirst($provider).'Gateway';
 
         $file = dirname(__FILE__).'/'.$class_name.".php";
         if (!file_exists($file)) {
