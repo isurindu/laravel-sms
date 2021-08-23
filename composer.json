@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Isurindu\\": "src/"
+            "Isurindu\\LaravelSms\\": "src/"
         }
     },
     "extra": {
